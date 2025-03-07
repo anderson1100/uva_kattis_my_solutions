@@ -4,7 +4,8 @@ import sys
 
 def main():
     #modulo
-    print(modulo(15,4))
+    #print(modulo(15,4))
+    print(lsb(1))
 
 #######tasks with bit manipulation
 
@@ -12,6 +13,16 @@ def main():
 def modulo(dvd, dvs):
     return ((dvd) & (dvs-1))
 
+#Determine if S is a power of 2.
+def isPower2(n):
+    return (not(n & (n - 1)))
+    #return (n & -n) == n
+
+def lsb(x):
+    n = 0
+    while (x | (1 << n)) != x: 
+        n += 1
+    return n
 
 if __name__ == "__main__":
     main()
